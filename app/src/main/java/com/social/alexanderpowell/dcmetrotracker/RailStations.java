@@ -34,10 +34,12 @@ public class RailStations extends AppCompatActivity implements RailPathsRecycler
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rail_stations);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        String route_color = intent.getStringExtra("COLOR");
+        //String route_color = intent.getStringExtra("COLOR");
+
 
         //
         String url = "https://api.wmata.com/Rail.svc/json/jPath";
@@ -64,7 +66,7 @@ public class RailStations extends AppCompatActivity implements RailPathsRecycler
                             RecyclerView recyclerView = findViewById(R.id.train_stations);
                             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                             adapter = new RailPathsRecyclerViewAdapter(getApplicationContext(), routes);
-                            //adapter.setClickListener(this);
+                            adapter.setClickListener(RailStations.this);
                             recyclerView.setAdapter(adapter);
                             DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
                             recyclerView.addItemDecoration(dividerItemDecoration);
@@ -94,11 +96,24 @@ public class RailStations extends AppCompatActivity implements RailPathsRecycler
 
         mQueue.add(jsonObjectRequest);
         //
+
+        ArrayList<String> routes = new ArrayList<>();
+        routes.add("test");
+        //adapter = new RailColorsRecyclerViewAdapter(getApplicationContext(), routes);
+        //adapter.setClickListener(this);
+
+        /*RecyclerView recyclerView = findViewById(R.id.train_stations);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        adapter = new RailColorsRecyclerViewAdapter(getApplicationContext(), routes);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
+        recyclerView.addItemDecoration(dividerItemDecoration);*/
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        //Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
 
         /*Intent intent = new Intent(getActivity(), RailStations.class);
         intent.putExtra("COLOR", adapter.getItem(position));

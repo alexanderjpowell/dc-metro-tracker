@@ -29,7 +29,7 @@ public class RailPathsRecyclerViewAdapter extends RecyclerView.Adapter<RailPaths
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.train_route_row, parent, false);
+        View view = mInflater.inflate(R.layout.train_route_station_row, parent, false);
         return new ViewHolder(view);
     }
 
