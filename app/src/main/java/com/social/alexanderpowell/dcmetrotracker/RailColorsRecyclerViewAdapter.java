@@ -41,22 +41,22 @@ public class RailColorsRecyclerViewAdapter extends RecyclerView.Adapter<RailColo
 
         // get icons from here: https://www.iconsdb.com/yellow-icons/circle-icon.html
         switch (color) {
-            case "BLUE":
+            case "Blue":
                 holder.myImageView.setBackground(ContextCompat.getDrawable(context, R.drawable.blue_circle_64));
                 break;
-            case "GREEN":
+            case "Green":
                 holder.myImageView.setBackground(ContextCompat.getDrawable(context, R.drawable.green_circle_64));
                 break;
-            case "ORANGE":
+            case "Orange":
                 holder.myImageView.setBackground(ContextCompat.getDrawable(context, R.drawable.orange_circle_64));
                 break;
-            case "RED":
+            case "Red":
                 holder.myImageView.setBackground(ContextCompat.getDrawable(context, R.drawable.red_circle_64));
                 break;
-            case "SILVER":
+            case "Silver":
                 holder.myImageView.setBackground(ContextCompat.getDrawable(context, R.drawable.silver_circle_64));
                 break;
-            case "YELLOW":
+            case "Yellow":
                 holder.myImageView.setBackground(ContextCompat.getDrawable(context, R.drawable.yellow_circle_64));
                 break;
         }

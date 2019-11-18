@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.social.alexanderpowell.dcmetrotracker.RailColorsRecyclerViewAdapter;
 import com.social.alexanderpowell.dcmetrotracker.R;
-import com.social.alexanderpowell.dcmetrotracker.RailStations;
+import com.social.alexanderpowell.dcmetrotracker.RailStationsActivity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +23,7 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+
 import org.json.JSONObject;
 
 public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdapter.ItemClickListener {
@@ -65,12 +66,12 @@ public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdap
         mQueue.add(jsonObjectRequest);
 
         ArrayList<String> routes = new ArrayList<>();
-        routes.add("BLUE");
-        routes.add("GREEN");
-        routes.add("ORANGE");
-        routes.add("RED");
-        routes.add("SILVER");
-        routes.add("YELLOW");
+        routes.add("Blue");
+        routes.add("Green");
+        routes.add("Orange");
+        routes.add("Red");
+        routes.add("Silver");
+        routes.add("Yellow");
 
         RecyclerView recyclerView = root.findViewById(R.id.train_routes);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -85,9 +86,9 @@ public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdap
 
     @Override
     public void onItemClick(View view, int position) {
-        //Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "You clicked " + adapter.getStationName(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(getActivity(), RailStations.class);
+        Intent intent = new Intent(getActivity(), RailStationsActivity.class);
         intent.putExtra("COLOR", adapter.getItem(position));
         startActivity(intent);
     }

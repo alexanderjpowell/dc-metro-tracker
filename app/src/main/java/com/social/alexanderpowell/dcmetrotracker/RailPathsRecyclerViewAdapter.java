@@ -15,14 +15,15 @@ import java.util.List;
 
 public class RailPathsRecyclerViewAdapter extends RecyclerView.Adapter<RailPathsRecyclerViewAdapter.ViewHolder> {
 
-    private List<String> mData;
+    private List<String> mData, mData1;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    public RailPathsRecyclerViewAdapter(Context context, List<String> data) {
+    public RailPathsRecyclerViewAdapter(Context context, List<String> data, List<String> data1) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.mData1 = data1;
     }
 
     // inflates the row layout from xml when needed
@@ -65,8 +66,12 @@ public class RailPathsRecyclerViewAdapter extends RecyclerView.Adapter<RailPaths
     }
 
     // convenience method for getting data at click position
-    public String getItem(int id) {
+    public String getStationName(int id) {
         return mData.get(id);
+    }
+
+    public String getStationCode(int id) {
+        return mData1.get(id);
     }
 
     // allows clicks events to be caught

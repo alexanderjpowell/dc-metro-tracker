@@ -4,11 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RailStationsActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/train_stations"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    tools:context=".RailTimePredictionsActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

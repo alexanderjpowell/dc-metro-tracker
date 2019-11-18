@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RailStations extends AppCompatActivity implements RailPathsRecyclerViewAdapter.ItemClickListener{
+public class RailStationsActivity extends AppCompatActivity implements RailPathsRecyclerViewAdapter.ItemClickListener{
 
     private RailPathsRecyclerViewAdapter adapter;
 
@@ -55,18 +55,22 @@ public class RailStations extends AppCompatActivity implements RailPathsRecycler
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            ArrayList<String> routes = new ArrayList<>();
+                            ArrayList<String> stationNames = new ArrayList<>();
+                            ArrayList<String> stationCodes = new ArrayList<>();
                             JSONArray array = response.getJSONArray("Path");
                             for (int i = 0; i < array.length(); i++) {
-                                String stationName = ((JSONObject)array.get(i)).getString("StationName");
+                                JSONObject object = (JSONObject)array.get(i);
+                                String stationName = object.getString("StationName");
+                                String stationCode = object.getString("StationCode");
                                 Log.d("Routes", stationName);
-                                routes.add(stationName);
+                                stationNames.add(stationName);
+                                stationCodes.add(stationCode);
                             }
 
                             RecyclerView recyclerView = findViewById(R.id.train_stations);
                             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                            adapter = new RailPathsRecyclerViewAdapter(getApplicationContext(), routes);
-                            adapter.setClickListener(RailStations.this);
+                            adapter = new RailPathsRecyclerViewAdapter(getApplicationContext(), stationNames, stationCodes);
+                            adapter.setClickListener(RailStationsActivity.this);
                             recyclerView.setAdapter(adapter);
                             DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
                             recyclerView.addItemDecoration(dividerItemDecoration);
@@ -96,27 +100,14 @@ public class RailStations extends AppCompatActivity implements RailPathsRecycler
 
         mQueue.add(jsonObjectRequest);
         //
-
-        ArrayList<String> routes = new ArrayList<>();
-        routes.add("test");
-        //adapter = new RailColorsRecyclerViewAdapter(getApplicationContext(), routes);
-        //adapter.setClickListener(this);
-
-        /*RecyclerView recyclerView = findViewById(R.id.train_stations);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        adapter = new RailColorsRecyclerViewAdapter(getApplicationContext(), routes);
-        adapter.setClickListener(this);
-        recyclerView.setAdapter(adapter);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-        recyclerView.addItemDecoration(dividerItemDecoration);*/
     }
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(getApplicationContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "You clicked " + adapter.getStationCode(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
 
-        /*Intent intent = new Intent(getActivity(), RailStations.class);
-        intent.putExtra("COLOR", adapter.getItem(position));
-        startActivity(intent);*/
+        Intent intent = new Intent(this, RailTimePredictionsActivity.class);
+        intent.putExtra("STATION_CODE", adapter.getStationCode(position));
+        startActivity(intent);
     }
 }
