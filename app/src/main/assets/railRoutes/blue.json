@@ -1,0 +1,137 @@
+[
+   {
+      "StationName":"Largo Town Center",
+      "Latitude":38.9008,
+      "Longitude":-76.8449
+   },
+   {
+      "StationName":"Morgan Boulevard",
+      "Latitude":38.8913,
+      "Longitude":-76.8682
+   },
+   {
+      "StationName":"Addison Road-Seat Pleasant",
+      "Latitude":38.886713,
+      "Longitude":-76.893592
+   },
+   {
+      "StationName":"Capitol Heights",
+      "Latitude":38.889757,
+      "Longitude":-76.913382
+   },
+   {
+      "StationName":"Benning Road",
+      "Latitude":38.890488,
+      "Longitude":-76.938291
+   },
+   {
+      "StationName":"Stadium-Armory",
+      "Latitude":38.88594,
+      "Longitude":-76.977485
+   },
+   {
+      "StationName":"Potomac Ave",
+      "Latitude":38.880841,
+      "Longitude":-76.985721
+   },
+   {
+      "StationName":"Eastern Market",
+      "Latitude":38.884124,
+      "Longitude":-76.995334
+   },
+   {
+      "StationName":"Capitol South",
+      "Latitude":38.884968,
+      "Longitude":-77.005137
+   },
+   {
+      "StationName":"Federal Center SW",
+      "Latitude":38.884958,
+      "Longitude":-77.01586
+   },
+   {
+      "StationName":"L'Enfant Plaza",
+      "Latitude":38.884775,
+      "Longitude":-77.021964
+   },
+   {
+      "StationName":"Smithsonian",
+      "Latitude":38.888022,
+      "Longitude":-77.028232
+   },
+   {
+      "StationName":"Federal Triangle",
+      "Latitude":38.893757,
+      "Longitude":-77.028218
+   },
+   {
+      "StationName":"Metro Center",
+      "Latitude":38.898303,
+      "Longitude":-77.028099
+   },
+   {
+      "StationName":"McPherson Square",
+      "Latitude":38.901316,
+      "Longitude":-77.033652
+   },
+   {
+      "StationName":"Farragut West",
+      "Latitude":38.901311,
+      "Longitude":-77.03981
+   },
+   {
+      "StationName":"Foggy Bottom-GWU",
+      "Latitude":38.900599,
+      "Longitude":-77.050273
+   },
+   {
+      "StationName":"Rosslyn",
+      "Latitude":38.896595,
+      "Longitude":-77.07146
+   },
+   {
+      "StationName":"Arlington Cemetery",
+      "Latitude":38.884574,
+      "Longitude":-77.063108
+   },
+   {
+      "StationName":"Pentagon",
+      "Latitude":38.869349,
+      "Longitude":-77.054013
+   },
+   {
+      "StationName":"Pentagon City",
+      "Latitude":38.863045,
+      "Longitude":-77.059507
+   },
+   {
+      "StationName":"Crystal City",
+      "Latitude":38.85779,
+      "Longitude":-77.050589
+   },
+   {
+      "StationName":"Ronald Reagan Washington National Airport",
+      "Latitude":38.852985,
+      "Longitude":-77.043805
+   },
+   {
+      "StationName":"Braddock Road",
+      "Latitude":38.814009,
+      "Longitude":-77.053763
+   },
+   {
+      "StationName":"King St-Old Town",
+      "Latitude":38.806474,
+      "Longitude":-77.061115
+   },
+   {
+      "StationName":"Van Dorn Street",
+      "Latitude":38.799193,
+      "Longitude":-77.129407
+   },
+   {
+      "StationName":"Franconia-Springfield",
+      "Latitude":38.766129,
+      "Longitude":-77.168797
+   }
+]

@@ -1,0 +1,87 @@
+[
+   {
+      "StationName":"Fort Totten",
+      "Latitude":38.951777,
+      "Longitude":-77.002174
+   },
+   {
+      "StationName":"Georgia Ave-Petworth",
+      "Latitude":38.936077,
+      "Longitude":-77.024728
+   },
+   {
+      "StationName":"Columbia Heights",
+      "Latitude":38.928672,
+      "Longitude":-77.032775
+   },
+   {
+      "StationName":"U Street/African-Amer Civil War Memorial/Cardozo",
+      "Latitude":38.916489,
+      "Longitude":-77.028938
+   },
+   {
+      "StationName":"Shaw-Howard U",
+      "Latitude":38.912919,
+      "Longitude":-77.022194
+   },
+   {
+      "StationName":"Mt Vernon Sq 7th St-Convention Center",
+      "Latitude":38.905604,
+      "Longitude":-77.022256
+   },
+   {
+      "StationName":"Gallery Pl-Chinatown",
+      "Latitude":38.89834,
+      "Longitude":-77.021851
+   },
+   {
+      "StationName":"Archives-Navy Memorial-Penn Quarter",
+      "Latitude":38.893893,
+      "Longitude":-77.021902
+   },
+   {
+      "StationName":"L'Enfant Plaza",
+      "Latitude":38.884775,
+      "Longitude":-77.021964
+   },
+   {
+      "StationName":"Pentagon",
+      "Latitude":38.869349,
+      "Longitude":-77.054013
+   },
+   {
+      "StationName":"Pentagon City",
+      "Latitude":38.863045,
+      "Longitude":-77.059507
+   },
+   {
+      "StationName":"Crystal City",
+      "Latitude":38.85779,
+      "Longitude":-77.050589
+   },
+   {
+      "StationName":"Ronald Reagan Washington National Airport",
+      "Latitude":38.852985,
+      "Longitude":-77.043805
+   },
+   {
+      "StationName":"Braddock Road",
+      "Latitude":38.814009,
+      "Longitude":-77.053763
+   },
+   {
+      "StationName":"King St-Old Town",
+      "Latitude":38.806474,
+      "Longitude":-77.061115
+   },
+   {
+      "StationName":"Eisenhower Avenue",
+      "Latitude":38.800313,
+      "Longitude":-77.071173
+   },
+   {
+      "StationName":"Huntington",
+      "Latitude":38.793841,
+      "Longitude":-77.075301
+   }
+]

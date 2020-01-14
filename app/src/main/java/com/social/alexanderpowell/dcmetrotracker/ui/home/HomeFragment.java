@@ -23,7 +23,6 @@ import com.android.volley.toolbox.Volley;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-
 import org.json.JSONObject;
 
 public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdapter.ItemClickListener {
@@ -35,7 +34,7 @@ public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdap
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         String url = "https://api.wmata.com/Rail.svc/json/jLines";
-        RequestQueue mQueue = Volley.newRequestQueue(getContext());
+        RequestQueue mQueue = Volley.newRequestQueue(requireContext());
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -49,8 +48,7 @@ public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdap
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
-                        Toast.makeText(getContext(), "error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
                 }) {
@@ -86,10 +84,28 @@ public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdap
 
     @Override
     public void onItemClick(View view, int position) {
-        //Toast.makeText(getContext(), "You clicked " + adapter.getStationName(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
-
         Intent intent = new Intent(getActivity(), RailStationsActivity.class);
-        intent.putExtra("COLOR", adapter.getItem(position));
+        String colorCode = getColorCode(adapter.getItem(position));
+        intent.putExtra("COLOR_CODE", colorCode);
         startActivity(intent);
+    }
+
+    private String getColorCode(String color) {
+        String ret = "";
+        color = color.toLowerCase();
+        if (color.equals("red")) {
+            ret = getString(R.string.red_code);
+        } else if (color.equals("yellow")) {
+            ret = getString(R.string.yellow_code);
+        } else if (color.equals("green")) {
+            ret = getString(R.string.green_code);
+        } else if (color.equals("blue")) {
+            ret = getString(R.string.blue_code);
+        } else if (color.equals("orange")) {
+            ret = getString(R.string.orange_code);
+        } else if (color.equals("silver")) {
+            ret = getString(R.string.silver_code);
+        }
+        return ret;
     }
 }

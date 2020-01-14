@@ -1,0 +1,137 @@
+[
+   {
+      "StationName":"Shady Grove",
+      "Latitude":39.119819,
+      "Longitude":-77.164921
+   },
+   {
+      "StationName":"Rockville",
+      "Latitude":39.084215,
+      "Longitude":-77.146424
+   },
+   {
+      "StationName":"Twinbrook",
+      "Latitude":39.062359,
+      "Longitude":-77.121113
+   },
+   {
+      "StationName":"White Flint",
+      "Latitude":39.048043,
+      "Longitude":-77.113131
+   },
+   {
+      "StationName":"Grosvenor-Strathmore",
+      "Latitude":39.029158,
+      "Longitude":-77.10415
+   },
+   {
+      "StationName":"Medical Center",
+      "Latitude":38.999947,
+      "Longitude":-77.097253
+   },
+   {
+      "StationName":"Bethesda",
+      "Latitude":38.984282,
+      "Longitude":-77.094431
+   },
+   {
+      "StationName":"Friendship Heights",
+      "Latitude":38.960744,
+      "Longitude":-77.085969
+   },
+   {
+      "StationName":"Tenleytown-AU",
+      "Latitude":38.947808,
+      "Longitude":-77.079615
+   },
+   {
+      "StationName":"Van Ness-UDC",
+      "Latitude":38.94362,
+      "Longitude":-77.063511
+   },
+   {
+      "StationName":"Cleveland Park",
+      "Latitude":38.934703,
+      "Longitude":-77.058226
+   },
+   {
+      "StationName":"Woodley Park-Zoo/Adams Morgan",
+      "Latitude":38.924999,
+      "Longitude":-77.052648
+   },
+   {
+      "StationName":"Dupont Circle",
+      "Latitude":38.909499,
+      "Longitude":-77.04362
+   },
+   {
+      "StationName":"Farragut North",
+      "Latitude":38.903192,
+      "Longitude":-77.039766
+   },
+   {
+      "StationName":"Metro Center",
+      "Latitude":38.898303,
+      "Longitude":-77.028099
+   },
+   {
+      "StationName":"Gallery Pl-Chinatown",
+      "Latitude":38.89834,
+      "Longitude":-77.021851
+   },
+   {
+      "StationName":"Judiciary Square",
+      "Latitude":38.896084,
+      "Longitude":-77.016643
+   },
+   {
+      "StationName":"Union Station",
+      "Latitude":38.897723,
+      "Longitude":-77.006745
+   },
+   {
+      "StationName":"NoMa-Gallaudet U",
+      "Latitude":38.907407,
+      "Longitude":-77.002961
+   },
+   {
+      "StationName":"Rhode Island Ave-Brentwood",
+      "Latitude":38.920741,
+      "Longitude":-76.995984
+   },
+   {
+      "StationName":"Brookland-CUA",
+      "Latitude":38.933234,
+      "Longitude":-76.994544
+   },
+   {
+      "StationName":"Fort Totten",
+      "Latitude":38.951777,
+      "Longitude":-77.002174
+   },
+   {
+      "StationName":"Takoma",
+      "Latitude":38.975532,
+      "Longitude":-77.017834
+   },
+   {
+      "StationName":"Silver Spring",
+      "Latitude":38.993841,
+      "Longitude":-77.031321
+   },
+   {
+      "StationName":"Forest Glen",
+      "Latitude":39.015413,
+      "Longitude":-77.042953
+   },
+   {
+      "StationName":"Wheaton",
+      "Latitude":39.038558,
+      "Longitude":-77.051098
+   },
+   {
+      "StationName":"Glenmont",
+      "Latitude":39.061713,
+      "Longitude":-77.05341
+   }
+]

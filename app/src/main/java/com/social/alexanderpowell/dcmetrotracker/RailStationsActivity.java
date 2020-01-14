@@ -4,28 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RailStationsActivity extends AppCompatActivity implements RailPathsRecyclerViewAdapter.ItemClickListener{
+public class RailStationsActivity extends AppCompatActivity implements RailPathsRecyclerViewAdapter.ItemClickListener {
 
     private RailPathsRecyclerViewAdapter adapter;
 
@@ -34,18 +30,26 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rail_stations);
 
-        if (getSupportActionBar() != null)
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         Intent intent = getIntent();
-        //String route_color = intent.getStringExtra("COLOR");
+        String route_color_code = intent.getStringExtra("COLOR_CODE");
 
+        Toast.makeText(getApplicationContext(), route_color_code, Toast.LENGTH_LONG).show();
 
         //
-        String url = "https://api.wmata.com/Rail.svc/json/jPath";
-        String FromStationCode = "A15";
-        String ToStationCode = "B11";
-        url = url + "?" + "FromStationCode=" + FromStationCode + "&" + "ToStationCode=" + ToStationCode;
+        String url = "https://api.wmata.com/Rail.svc/json/jStations";
+        String LineCode = route_color_code;
+        url = url + "?" + "LineCode=" + LineCode;
+        //
+
+        //
+        //String url = "https://api.wmata.com/Rail.svc/json/jPath";
+        //String FromStationCode = "A15";
+        //String ToStationCode = "B11";
+        //url = url + "?" + "FromStationCode=" + FromStationCode + "&" + "ToStationCode=" + ToStationCode;
 
         RequestQueue mQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -57,11 +61,14 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
                         try {
                             ArrayList<String> stationNames = new ArrayList<>();
                             ArrayList<String> stationCodes = new ArrayList<>();
-                            JSONArray array = response.getJSONArray("Path");
+                            //JSONArray array = response.getJSONArray("Path");
+                            JSONArray array = response.getJSONArray("Stations");
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject object = (JSONObject)array.get(i);
-                                String stationName = object.getString("StationName");
-                                String stationCode = object.getString("StationCode");
+                                //String stationName = object.getString("StationName");
+                                String stationName = object.getString("Name");
+                                //String stationCode = object.getString("StationCode");
+                                String stationCode = object.getString("Code");
                                 Log.d("Routes", stationName);
                                 stationNames.add(stationName);
                                 stationCodes.add(stationCode);
@@ -107,6 +114,7 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
         //Toast.makeText(getApplicationContext(), "You clicked " + adapter.getStationCode(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, RailTimePredictionsActivity.class);
+        intent.putExtra("STATION_NAME", adapter.getStationName(position));
         intent.putExtra("STATION_CODE", adapter.getStationCode(position));
         startActivity(intent);
     }

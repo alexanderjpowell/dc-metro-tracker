@@ -7,8 +7,6 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="wmata_secret_key">e13626d03d8e4c03ac07f95541b3091b</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -17,4 +15,11 @@
     <string name="menu_send">Send</string>
 
     <string name="train_route_color_icon">Train route color icon</string>
+
+    <string name="red_code">RD</string>
+    <string name="yellow_code">YL</string>
+    <string name="green_code">GR</string>
+    <string name="blue_code">BL</string>
+    <string name="orange_code">OR</string>
+    <string name="silver_code">SV</string>
 </resources>
