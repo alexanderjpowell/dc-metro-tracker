@@ -35,7 +35,7 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
         }
 
         Intent intent = getIntent();
-        String route_color_code = intent.getStringExtra("COLOR_CODE");
+        final String route_color_code = intent.getStringExtra("COLOR_CODE");
 
         Toast.makeText(getApplicationContext(), route_color_code, Toast.LENGTH_LONG).show();
 
@@ -76,7 +76,7 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
 
                             RecyclerView recyclerView = findViewById(R.id.train_stations);
                             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                            adapter = new RailPathsRecyclerViewAdapter(getApplicationContext(), stationNames, stationCodes);
+                            adapter = new RailPathsRecyclerViewAdapter(getApplicationContext(), stationNames, stationCodes, route_color_code);
                             adapter.setClickListener(RailStationsActivity.this);
                             recyclerView.setAdapter(adapter);
                             DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
