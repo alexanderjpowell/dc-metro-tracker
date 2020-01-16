@@ -1,4 +1,4 @@
-package com.social.alexanderpowell.dcmetrotracker.ui.slideshow;
+package com.social.alexanderpowell.dcmetrotracker.ui.farecalculator;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.social.alexanderpowell.dcmetrotracker.R;
 
-public class SlideshowFragment extends Fragment {
+public class FareCalculatorFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private FareCalculatorViewModel fareCalculatorViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        fareCalculatorViewModel =
+                ViewModelProviders.of(this).get(FareCalculatorViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_farecalculator, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        fareCalculatorViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

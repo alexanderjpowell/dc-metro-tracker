@@ -1,54 +1,35 @@
-package com.social.alexanderpowell.dcmetrotracker.ui.gallery;
+package com.social.alexanderpowell.dcmetrotracker.ui.map;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
-import com.social.alexanderpowell.dcmetrotracker.MainActivity;
 import com.social.alexanderpowell.dcmetrotracker.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.InputStream;
-import java.net.Inet4Address;
-import java.util.HashMap;
-import java.util.Map;
 
-public class GalleryFragment extends Fragment implements OnMapReadyCallback {
+public class MapFragment extends Fragment implements OnMapReadyCallback {
 
-    //private GalleryViewModel galleryViewModel;
+    //private MapViewModel galleryViewModel;
     private GoogleMap mMap;
 
-    /*public static GalleryFragment newInstance() {
-        GalleryFragment fragment = new GalleryFragment();
+    /*public static MapFragment newInstance() {
+        MapFragment fragment = new MapFragment();
         return fragment;
     }*/
 

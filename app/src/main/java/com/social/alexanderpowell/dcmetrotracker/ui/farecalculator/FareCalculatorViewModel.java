@@ -1,16 +1,16 @@
-package com.social.alexanderpowell.dcmetrotracker.ui.gallery;
+package com.social.alexanderpowell.dcmetrotracker.ui.farecalculator;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class FareCalculatorViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public FareCalculatorViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is map fragment");
+        mText.setValue("This is slideshow fragment");
     }
 
     public LiveData<String> getText() {
