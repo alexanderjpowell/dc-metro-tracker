@@ -1,4 +1,4 @@
-package com.social.alexanderpowell.dcmetrotracker.ui.home;
+package com.social.alexanderpowell.dcmetrotracker.ui.railcolors;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import org.json.JSONObject;
 
-public class HomeFragment extends Fragment implements RailColorsRecyclerViewAdapter.ItemClickListener {
+public class RailColorsFragment extends Fragment implements RailColorsRecyclerViewAdapter.ItemClickListener {
 
     private RailColorsRecyclerViewAdapter adapter;
 

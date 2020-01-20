@@ -1,5 +1,6 @@
 package com.social.alexanderpowell.dcmetrotracker;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -98,7 +99,20 @@ public class RailTimePredictionsActivity extends AppCompatActivity implements Ra
 
         mQueue.add(jsonObjectRequest);
         //
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
     }
+
+    //@Override
+    //public void onBackPressed() {
+    //}
+
+    //@Override
+    //public void onResume() {
+    //    super.onResume();
+    //    Toast.makeText(getApplicationContext(), "on resume", Toast.LENGTH_SHORT).show();
+    //}
 
     @Override
     public void onItemClick(View view, int position) {
