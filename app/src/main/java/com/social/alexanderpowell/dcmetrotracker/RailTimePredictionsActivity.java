@@ -28,6 +28,8 @@ import java.util.Map;
 
 public class RailTimePredictionsActivity extends AppCompatActivity implements RailPredictionsRecyclerViewAdapter.ItemClickListener {
 
+    private RailPredictionsRecyclerViewAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,11 +72,12 @@ public class RailTimePredictionsActivity extends AppCompatActivity implements Ra
 
                             RecyclerView recyclerView = findViewById(R.id.rail_time_prediction);
                             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                            RailPredictionsRecyclerViewAdapter adapter = new RailPredictionsRecyclerViewAdapter(getApplicationContext(), predictions);
+                            adapter = new RailPredictionsRecyclerViewAdapter(getApplicationContext(), predictions);
                             adapter.setClickListener(RailTimePredictionsActivity.this);
                             recyclerView.setAdapter(adapter);
                             DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
                             recyclerView.addItemDecoration(dividerItemDecoration);
+
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
@@ -99,23 +102,16 @@ public class RailTimePredictionsActivity extends AppCompatActivity implements Ra
 
         mQueue.add(jsonObjectRequest);
         //
-
-        ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
     }
-
-    //@Override
-    //public void onBackPressed() {
-    //}
-
-    //@Override
-    //public void onResume() {
-    //    super.onResume();
-    //    Toast.makeText(getApplicationContext(), "on resume", Toast.LENGTH_SHORT).show();
-    //}
 
     @Override
     public void onItemClick(View view, int position) {
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

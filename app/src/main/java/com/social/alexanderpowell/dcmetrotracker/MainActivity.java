@@ -13,6 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.social.alexanderpowell.dcmetrotracker.ui.farecalculator.ActionBottomDialogFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -21,7 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ActionBottomDialogFragment.ItemClickListener {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -65,5 +66,10 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onItemClick(String item) {
+
     }
 }

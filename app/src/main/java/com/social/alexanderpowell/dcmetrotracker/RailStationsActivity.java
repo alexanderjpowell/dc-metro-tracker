@@ -39,17 +39,9 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
 
         Toast.makeText(getApplicationContext(), route_color_code, Toast.LENGTH_LONG).show();
 
-        //
         String url = "https://api.wmata.com/Rail.svc/json/jStations";
         String LineCode = route_color_code;
         url = url + "?" + "LineCode=" + LineCode;
-        //
-
-        //
-        //String url = "https://api.wmata.com/Rail.svc/json/jPath";
-        //String FromStationCode = "A15";
-        //String ToStationCode = "B11";
-        //url = url + "?" + "FromStationCode=" + FromStationCode + "&" + "ToStationCode=" + ToStationCode;
 
         RequestQueue mQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -61,13 +53,10 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
                         try {
                             ArrayList<String> stationNames = new ArrayList<>();
                             ArrayList<String> stationCodes = new ArrayList<>();
-                            //JSONArray array = response.getJSONArray("Path");
                             JSONArray array = response.getJSONArray("Stations");
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject object = (JSONObject)array.get(i);
-                                //String stationName = object.getString("StationName");
                                 String stationName = object.getString("Name");
-                                //String stationCode = object.getString("StationCode");
                                 String stationCode = object.getString("Code");
                                 Log.d("Routes", stationName);
                                 stationNames.add(stationName);

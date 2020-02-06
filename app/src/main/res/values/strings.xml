@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DCMetroTracker</string>
+    <string name="app_name">DC Metro</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">DC Metro Tracker</string>
@@ -23,4 +23,15 @@
     <string name="blue_code">BL</string>
     <string name="orange_code">OR</string>
     <string name="silver_code">SV</string>
+
+    <string name="fare_string">Fare Information\n\nPeak Fare: {0}\nOff Peak Fare: {1}\nSenior/Disabled: {2}</string>
+
+    <string name="origin_station_hint">From</string>
+    <string name="destination_station_hint">To</string>
+    <string name="fare_calculator_button_label">Get Fare</string>
+    <string name="fare_information_label">Fare Information</string>
+    <string name="fare_info_icon_content_description">Info icon button</string>
+    <string name="peak_fare_label">Peak Fare: </string>
+    <string name="off_peak_fare_label">Off Peak Fare: </string>
+    <string name="senior_disabled_fare_label">Senior/Disabled Fare: </string>
 </resources>
