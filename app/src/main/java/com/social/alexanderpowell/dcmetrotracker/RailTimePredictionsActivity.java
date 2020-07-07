@@ -41,7 +41,7 @@ public class RailTimePredictionsActivity extends AppCompatActivity implements Ra
         Intent intent = getIntent();
         String stationCode = intent.getStringExtra("STATION_CODE");
         String stationName = intent.getStringExtra("STATION_NAME");
-        Toast.makeText(getApplicationContext(), stationCode, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), stationCode, Toast.LENGTH_SHORT).show();
         setTitle(stationName);
 
         //
@@ -54,25 +54,40 @@ public class RailTimePredictionsActivity extends AppCompatActivity implements Ra
                     public void onResponse(JSONObject response) {
                         try {
                             ArrayList<String> predictions = new ArrayList<>();
+                            ArrayList<JSONObject> jsonPredictions = new ArrayList<>();
 
                             JSONArray array = response.getJSONArray("Trains");
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject object = array.getJSONObject(i);
+                                jsonPredictions.add(object);
                                 String destinationName = object.getString("DestinationName").trim();
                                 String numberOfCars = object.getString("Car").trim();
                                 String prediction = object.getString("Min").trim(); // or ARR or BRD
-                                if (!prediction.isEmpty()) {
-                                    if (prediction.equals("ARR") || prediction.equals("BRD")) {
-                                        predictions.add(prediction);
+                                /*if (!prediction.isEmpty()) {
+                                    if (prediction.equals("ARR")) {
+                                        predictions.add("Arriving");
+                                    } else if (prediction.equals("BRD")) {
+                                        predictions.add("Boarding");
                                     } else {
+                                        Integer predictionInt = convertStringToInt(prediction);
+                                        if (!predictionInt.equals(0)) {
+                                            if (predictionInt <= 10) {
+                                                //make green
+                                            } else if (predictionInt > 10) {
+                                                //make red
+                                            }
+                                        } else {
+
+                                        }
                                         predictions.add(prediction + " minutes, " + numberOfCars + " cars, to: " + destinationName);
                                     }
-                                }
+                                }*/
                             }
 
                             RecyclerView recyclerView = findViewById(R.id.rail_time_prediction);
                             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                            adapter = new RailPredictionsRecyclerViewAdapter(getApplicationContext(), predictions);
+                            //adapter = new RailPredictionsRecyclerViewAdapter(getApplicationContext(), predictions);
+                            adapter = new RailPredictionsRecyclerViewAdapter(getApplicationContext(), jsonPredictions);
                             adapter.setClickListener(RailTimePredictionsActivity.this);
                             recyclerView.setAdapter(adapter);
                             DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
@@ -102,6 +117,16 @@ public class RailTimePredictionsActivity extends AppCompatActivity implements Ra
 
         mQueue.add(jsonObjectRequest);
         //
+    }
+
+    public Integer convertStringToInt(String minutes) {
+        Integer ret;
+        try {
+            ret = Integer.valueOf(minutes);
+        } catch (Exception ex) {
+            ret = 0;
+        }
+        return ret;
     }
 
     @Override

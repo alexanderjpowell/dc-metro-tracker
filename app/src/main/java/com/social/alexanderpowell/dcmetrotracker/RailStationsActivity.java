@@ -82,6 +82,7 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
                     public void onErrorResponse(VolleyError error) {
                         // TODO: Handle error
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.e("ERROR", error.getMessage());
                     }
 
                 }) {

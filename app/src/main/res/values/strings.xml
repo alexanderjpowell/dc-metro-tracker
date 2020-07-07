@@ -34,4 +34,6 @@
     <string name="peak_fare_label">Peak Fare: </string>
     <string name="off_peak_fare_label">Off Peak Fare: </string>
     <string name="senior_disabled_fare_label">Senior/Disabled Fare: </string>
+
+    <string name="train_line_color_description">Train Line Color</string>
 </resources>

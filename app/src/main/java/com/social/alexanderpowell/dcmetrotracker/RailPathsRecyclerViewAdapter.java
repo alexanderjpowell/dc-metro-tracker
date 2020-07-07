@@ -40,17 +40,17 @@ public class RailPathsRecyclerViewAdapter extends RecyclerView.Adapter<RailPaths
         String stationName = mData.get(position);
         holder.myTextView.setText(stationName);
         if (this.colorCode.equals("RD")) {
-            holder.myImageView.setBackgroundResource(R.drawable.red_circle_64);
+            holder.myImageView.setBackgroundResource(R.drawable.red_circle);
         } else if (this.colorCode.equals("YL")) {
-            holder.myImageView.setBackgroundResource(R.drawable.yellow_circle_64);
+            holder.myImageView.setBackgroundResource(R.drawable.yellow_circle);
         } else if (this.colorCode.equals("GR")) {
-            holder.myImageView.setBackgroundResource(R.drawable.green_circle_64);
+            holder.myImageView.setBackgroundResource(R.drawable.green_circle);
         } else if (this.colorCode.equals("BL")) {
-            holder.myImageView.setBackgroundResource(R.drawable.blue_circle_64);
+            holder.myImageView.setBackgroundResource(R.drawable.blue_circle);
         } else if (this.colorCode.equals("OR")) {
-            holder.myImageView.setBackgroundResource(R.drawable.orange_circle_64);
+            holder.myImageView.setBackgroundResource(R.drawable.orange_circle);
         } else if (this.colorCode.equals("SV")) {
-            holder.myImageView.setBackgroundResource(R.drawable.silver_circle_64);
+            holder.myImageView.setBackgroundResource(R.drawable.silver_circle);
         }
     }
 
@@ -64,19 +64,13 @@ public class RailPathsRecyclerViewAdapter extends RecyclerView.Adapter<RailPaths
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView myTextView;
         ImageView myImageView;
+        TextView myTextView;
 
         ViewHolder(View itemView) {
             super(itemView);
-            myTextView = itemView.findViewById(R.id.station_name_text);
             myImageView = itemView.findViewById(R.id.line_color);
-            /*String color = myTextView.getText().toString().toLowerCase();
-            if (color.equals("metro center")) {
-                myImageView.setBackgroundResource(R.drawable.red_circle_64);
-            } else {
-                myImageView.setBackgroundResource(R.drawable.blue_circle_64);
-            }*/
+            myTextView = itemView.findViewById(R.id.station_name_text);
             itemView.setOnClickListener(this);
         }
 

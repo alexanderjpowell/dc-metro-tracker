@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.card.MaterialCardView;
 import com.social.alexanderpowell.dcmetrotracker.RailColorsRecyclerViewAdapter;
 import com.social.alexanderpowell.dcmetrotracker.R;
 import com.social.alexanderpowell.dcmetrotracker.RailStationsActivity;
@@ -31,7 +33,63 @@ public class RailColorsFragment extends Fragment implements RailColorsRecyclerVi
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_rail_colors, container, false);
+
+        MaterialCardView materialCardView1 = root.findViewById(R.id.fareCardView1);
+        MaterialCardView materialCardView2 = root.findViewById(R.id.fareCardView2);
+        MaterialCardView materialCardView3 = root.findViewById(R.id.fareCardView3);
+        MaterialCardView materialCardView4 = root.findViewById(R.id.fareCardView4);
+        MaterialCardView materialCardView5 = root.findViewById(R.id.fareCardView5);
+        MaterialCardView materialCardView6 = root.findViewById(R.id.fareCardView6);
+
+        materialCardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RailStationsActivity.class);
+                intent.putExtra("COLOR_CODE", "GR");
+                startActivity(intent);
+            }
+        });
+        materialCardView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RailStationsActivity.class);
+                intent.putExtra("COLOR_CODE", "RD");
+                startActivity(intent);
+            }
+        });
+        materialCardView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RailStationsActivity.class);
+                intent.putExtra("COLOR_CODE", "BL");
+                startActivity(intent);
+            }
+        });
+        materialCardView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RailStationsActivity.class);
+                intent.putExtra("COLOR_CODE", "OR");
+                startActivity(intent);
+            }
+        });
+        materialCardView5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RailStationsActivity.class);
+                intent.putExtra("COLOR_CODE", "SV");
+                startActivity(intent);
+            }
+        });
+        materialCardView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), RailStationsActivity.class);
+                intent.putExtra("COLOR_CODE", "YL");
+                startActivity(intent);
+            }
+        });
 
         String url = "https://api.wmata.com/Rail.svc/json/jLines";
         RequestQueue mQueue = Volley.newRequestQueue(requireContext());
@@ -108,4 +166,5 @@ public class RailColorsFragment extends Fragment implements RailColorsRecyclerVi
         }
         return ret;
     }
+
 }
