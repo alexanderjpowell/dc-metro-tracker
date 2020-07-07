@@ -37,7 +37,9 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
         Intent intent = getIntent();
         final String route_color_code = intent.getStringExtra("COLOR_CODE");
 
-        Toast.makeText(getApplicationContext(), route_color_code, Toast.LENGTH_LONG).show();
+        setTitle(getColorFromCode(route_color_code));
+
+        //Toast.makeText(getApplicationContext(), route_color_code, Toast.LENGTH_LONG).show();
 
         String url = "https://api.wmata.com/Rail.svc/json/jStations";
         String LineCode = route_color_code;
@@ -107,5 +109,21 @@ public class RailStationsActivity extends AppCompatActivity implements RailPaths
         intent.putExtra("STATION_NAME", adapter.getStationName(position));
         intent.putExtra("STATION_CODE", adapter.getStationCode(position));
         startActivity(intent);
+    }
+
+    private String getColorFromCode(String color) {
+        if (color.equals("RD")) {
+            return "Red";
+        } else if (color.equals("GR")) {
+            return "Green";
+        } else if (color.equals("BL")) {
+            return "Blue";
+        } else if (color.equals("OR")) {
+            return "Orange";
+        } else if (color.equals("SV")) {
+            return "Silver";
+        } else {// if (color.equals("YL")) {
+            return "Yellow";
+        }
     }
 }
