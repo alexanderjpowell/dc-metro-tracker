@@ -1,0 +1,1 @@
+# This application does not collect any data from the user.  No ads are shown in the application.  No names, email addresses, passwords or other forms of identification are gathered.  No data is saved to any sort of database.  The sole purpose of this application is to get information as to when your next train will arrive.  
